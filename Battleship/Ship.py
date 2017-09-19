@@ -1,19 +1,23 @@
-#v 0.1  d. 9/18/17
+#v 0.1  d 9/18/17
+#TODO Add ship locations
 
 class Ship:
-	def __init__(self, size):
+	def __init__(self, size, locX, locY):
 		self.size = size
 		self.isHit = [False for i in range(size)]
 
-	def hit(index, isHit):
-		isHit.pop(index)
-		isHit.insert(index, True)
-		return isHit
+		self.x = locX
+		self.y = locY
+
+	def hit(self, index, isHit):
+		self.isHit.pop(index)
+		self.isHit.insert(index, True)
+		return self.isHit
 
 class Battleship(Ship):
 	def __init__(self):
 		#super(Battleship, self).__init__(4)
-		Ship.__init__(4)
+		Ship.__init__(4) #This should work
 
 class Submarine(Ship):
 	def __init__(self):
