@@ -15,24 +15,28 @@ class Ship:
 		return self.isHit
 
 class Battleship(Ship):
-	def __init__(self):
-		#super(Battleship, self).__init__(4)
-		Ship.__init__(4) #This should work
+	def __init__(self, x, y):
+		super(Battleship, self).__init__(4, x, y)
+		#Ship.__init__(4)
 
 class Submarine(Ship):
-	def __init__(self):
-		Ship.__init__(3)
+	def __init__(self, x, y):
+		super(Battleship, self).__init__(3, x, y)
+		#Ship.__init__(3)
 
 class Carrier(Ship):
-	def __init__(self):
-		Ship.__init__(5)
+	def __init__(self, x, y):
+		super(Battleship, self).__init__(5, x, y)
+		#Ship.__init__(5)
 
 
 class Cruiser(Ship):
-	def __init__(self):
-		Ship.__init__(3)
+	def __init__(self,x, y):
+		super(Battleship, self).__init__(3, x, y)
+		#Ship.__init__(3)
 
 
 class Destoryer(Ship):
-	def __init__(self):
-		Ship.__init__(2)
+	def __init__(self, x, y):
+		super(Battleship, self).__init__(2, x, y)
+		#Ship.__init__(2)
