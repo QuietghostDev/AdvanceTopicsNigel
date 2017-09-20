@@ -1,5 +1,5 @@
 #v 0.1  d 9/18/17
-#TODO Add ship locations
+#TODO Use Python 3...
 
 class Ship:
 	def __init__(self, size, locX, locY):
@@ -21,22 +21,26 @@ class Battleship(Ship):
 
 class Submarine(Ship):
 	def __init__(self, x, y):
-		super(Battleship, self).__init__(3, x, y)
+		super(Submarine, self).__init__(3, x, y)
 		#Ship.__init__(3)
 
 class Carrier(Ship):
 	def __init__(self, x, y):
-		super(Battleship, self).__init__(5, x, y)
+		super(Carrier, self).__init__(5, x, y)
 		#Ship.__init__(5)
-
 
 class Cruiser(Ship):
 	def __init__(self,x, y):
-		super(Battleship, self).__init__(3, x, y)
+		super(Cruiser, self).__init__(3, x, y)
 		#Ship.__init__(3)
-
 
 class Destoryer(Ship):
 	def __init__(self, x, y):
-		super(Battleship, self).__init__(2, x, y)
+		super(Destoryer, self).__init__(2, x, y)
 		#Ship.__init__(2)
+
+cruiser1 = Cruiser(5,8)
+print cruiser1.x
+print cruiser1.y
+print cruiser1.isHit
+print cruiser1.size
