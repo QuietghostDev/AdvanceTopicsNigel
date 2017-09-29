@@ -1,4 +1,4 @@
-# v 0.1  d 9/18/17
+# v 0.1  d 9/28/17
 # TODO
 
 
@@ -17,6 +17,8 @@ class Board:
 		self.boardP1[:][:] = None
 		self.boardP2[:][:] = None
 
-newBoard = Board(24, 12)
-print(newBoard.boardP1)
-print(newBoard.shipLayerP1)
+	def shipType(self, x, y, player):
+		if player == 1:
+			return self.shipLayerP1[y][x]
+		if player == 2:
+			return self.shipLayerP2[y][x]

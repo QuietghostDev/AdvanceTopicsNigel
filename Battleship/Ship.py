@@ -1,5 +1,5 @@
-# v 0.1  d 9/18/17
-# TODO Use Python 3...
+# v 0.1  d 9/28/17
+# TODO
 
 
 class Ship:
@@ -19,43 +19,32 @@ class Ship:
 	def getType(self):
 		return self.__class__.__name__
 
-	def placeShip(self):
-		pass
-
 
 class Battleship(Ship):
-	def __init__(self, x, y):
-		super(Battleship, self).__init__(4, x, y)
-		# Ship.__init__(4)
+	def __init__(self, x, y, orient):
+		super(Battleship, self).__init__(4, x, y, orient)
 
 
 class Submarine(Ship):
-	def __init__(self, x, y):
-		super(Submarine, self).__init__(3, x, y)
-		# Ship.__init__(3)
+	def __init__(self, x, y, orient):
+		super(Submarine, self).__init__(3, x, y, orient)
 
 
 class Carrier(Ship):
-	def __init__(self, x, y):
-		super(Carrier, self).__init__(5, x, y)
-		# Ship.__init__(5)
+	def __init__(self, x, y, orient):
+		super(Carrier, self).__init__(5, x, y, orient)
 
 
 class Cruiser(Ship):
-	def __init__(self, x, y):
-		super(Cruiser, self).__init__(3, x, y)
-		# Ship.__init__(3)
+	def __init__(self, x, y, orient):
+		super(Cruiser, self).__init__(3, x, y, orient)
 
 
 class Destroyer(Ship):
+	def __init__(self, x, y, orient):
+		super(Destroyer, self).__init__(2, x, y, orient)
+
+
+class Water(Ship):
 	def __init__(self, x, y):
-		super(Destroyer, self).__init__(2, x, y)
-		# Ship.__init__(2)
-
-
-battleship1 = Battleship(5, 8)
-print(battleship1.x)
-print(battleship1.y)
-print(battleship1.getType())
-print(battleship1.isHit)
-print(battleship1.size)
+		super(Water, self).__init__(1, x, y, 0)
