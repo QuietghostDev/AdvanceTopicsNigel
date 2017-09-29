@@ -1,5 +1,5 @@
 # v 0.1  d 9/28/17
-# TODO
+# TODO Write getShip function that returns ship
 
 import Ship
 import Board
@@ -23,6 +23,9 @@ class BattleshipGame:
                 if player == 2:
                     self.newBoard.shipLayerP2[ship.y][ship.x+i] = ship.getType()
 
+    def getShip(self, shipType):
+        pass
+
     def makeGuess(self, x, y, receivingPlayer):
         if receivingPlayer == 1:
             if self.newBoard.shipType(x, y, receivingPlayer) == 'Water':
@@ -30,4 +33,11 @@ class BattleshipGame:
                 return False
             else:
                 self.newBoard.shotLayerP1[y][x] = True
+                return True
+        if receivingPlayer == 2:
+            if self.newBoard.shipType(x, y, receivingPlayer) == 'Water':
+                self.newBoard.shotLayerP2[y][x] = False
+                return False
+            else:
+                self.newBoard.shotLayerP2[y][x] = True
                 return True
