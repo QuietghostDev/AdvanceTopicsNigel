@@ -19,6 +19,12 @@ class Ship:
 	def getType(self):
 		return self.__class__.__name__
 
+	def getIndex(self, x, y):
+		if self.orientation == 0:
+			return y-self.y
+		if self.orientation == 1:
+			return x-self.x
+
 
 class Battleship(Ship):
 	def __init__(self, x, y, orient):
