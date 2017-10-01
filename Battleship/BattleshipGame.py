@@ -29,25 +29,26 @@ class BattleshipGame:
 
     def makeGuess(self, x, y, receivingPlayer):
         if receivingPlayer == 1:
-            if self.board.shipType(x, y, receivingPlayer) == 'Water':
-                self.board.shotLayerP1[y][x] = False
-                return False
+            if self.board.shotLayerP1[y][x] is None:
+                guess = self.board.shipLayerP1[y][x]
+                if self.board.shipType(x, y, receivingPlayer) == 'Water':
+                    self.board.shotLayerP1[y][x] = False
+                    return False
+                else:
+                    self.board.shotLayerP1[y][x] = True
+                    hitIndex = guess.getIndex(x, y)
+                    guess.hit(hitIndex)
+                    return True
             else:
-                self.board.shotLayerP1[y][x] = True
-                hitIndex = self.board.shipLayerP1[y][x].getIndex(x, y)
-                self.board.shipLayerP1[y][x].hit(hitIndex)
-                return True
+                raise "guess not none"
         if receivingPlayer == 2:
-            if self.board.shipType(x, y, receivingPlayer) == 'Water':
-                self.board.shotLayerP2[y][x] = False
-                return False
-            else:
-                self.board.shotLayerP2[y][x] = True
-                hitIndex = self.board.shipLayerP2[y][x].getIndex(x, y)
-                self.board.shipLayerP2[y][x].hit(hitIndex)
-                return True
-
-Game = BattleshipGame()
-Game.placeShip(1, Ship.Battleship(2, 5, 1))
-Game.placeShip(2, Ship.Carrier(1, 1, 0))
-Game.makeGuess(4, 5, 1)
+            if self.board.shotLayerP2[y][x] is None:
+                guess = self.board.shipLayerP2[y][x]
+                if self.board.shipType(x, y, receivingPlayer) == 'Water':
+                    self.board.shotLayerP2[y][x] = False
+                    return False
+                else:
+                    self.board.shotLayerP2[y][x] = True
+                    hitIndex = guess.getIndex(x, y)
+                    guess.hit(hitIndex)
+                    return True

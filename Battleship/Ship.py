@@ -1,5 +1,4 @@
 # v 0.1 Build 001  d 9/29/17
-# TODO Fix indexing problem
 
 
 class Ship:
