@@ -1,4 +1,4 @@
-# v 0.1 Build 001  d 9/29/17
+# v 0.1 Build 001  d 9/30/17
 
 
 class Ship:

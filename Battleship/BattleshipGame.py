@@ -1,8 +1,10 @@
-# v 0.1 Build 001  d 9/29/17
-# TODO Make graphics
-# TODO Finish functionality
+# v 0.1 Build 001  d 9/30/17
+# TODO Make graphics using Tkinter
+# TODO Make it responsive
+
 import Board
 import Ship
+from tkinter import *
 
 
 class BattleshipGame:
@@ -52,3 +54,5 @@ class BattleshipGame:
                     hitIndex = guess.getIndex(x, y)
                     guess.hit(hitIndex)
                     return True
+            else:
+                raise "guess not none"
