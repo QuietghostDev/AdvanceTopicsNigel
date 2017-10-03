@@ -1,10 +1,9 @@
 # v 0.1 Build 001  d 9/30/17
-# TODO Make graphics using Tkinter
-# TODO Make it responsive
 
+
+import GUI
 import Board
 import Ship
-from tkinter import *
 
 
 class BattleshipGame:
@@ -42,7 +41,7 @@ class BattleshipGame:
                     guess.hit(hitIndex)
                     return True
             else:
-                raise "guess not none"
+                raise "guess_not_none"
         if receivingPlayer == 2:
             if self.board.shotLayerP2[y][x] is None:
                 guess = self.board.shipLayerP2[y][x]
@@ -55,4 +54,4 @@ class BattleshipGame:
                     guess.hit(hitIndex)
                     return True
             else:
-                raise "guess not none"
+                raise "guess_not_none"

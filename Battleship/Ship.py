@@ -24,6 +24,12 @@ class Ship:
 		if self.orientation == 1:
 			return x-self.x
 
+	def isSunk(self):
+		for index in self.isHit:
+			if index is True:
+				return False
+		return True
+
 
 class Battleship(Ship):
 	def __init__(self, x, y, orient):
