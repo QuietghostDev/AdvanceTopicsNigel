@@ -11,14 +11,14 @@ db = SQLAlchemy(app)
 def setup():
     Base.metadata.drop_all(bind=db.engine)
     Base.metadata.create_all(bind=db.engine)
-    db.session.add(Aircraft('B738', 'Boeing 737-800', 'N990NN', 'American Airlines', True))
+    db.session.add(Aircraft('B738', 'Boeing 737-823(WL)', 'N990NN', 1.5, 'American Airlines', True))
     db.session.commit()
 
 
 @app.route('/')
 def root():
-    users = db.session.query(User).all()
-    return u"<br>".join([u"{0}: {1}, {2}".format(aircraft.reg, aircraft.iata, aircraft.icao) for aircraft in Aircraft])
+    Aircrafts = db.session.query(Aircraft).all()
+    return u"<br>".join([u"{0}: {1}, {2}".format(aircraft.reg, aircraft.iata, aircraft.icao) for aircraft in Aircrafts])
 
 
 if __name__ == '__main__':

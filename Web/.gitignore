@@ -1,0 +1,6 @@
+# Web .gitignore #
+############
+.idea/
+__pychache__/
+*.pyc
+.DS_Store
