@@ -11,7 +11,10 @@ db = SQLAlchemy(app)
 def setup():
     Base.metadata.drop_all(bind=db.engine)
     Base.metadata.create_all(bind=db.engine)
-    db.session.add(Aircraft('B738', 'Boeing 737-823(WL)', 'N990NN', 1.5, 'American Airlines', True))
+    db.session.add(Aircraft('B738', 'Boeing 737-823(WL)', 'N990NN', 1.5, 'CLASS 3', 'Boeing', 'American Airlines'))
+    db.session.add(Aircraft('A333', 'A330-323', 'N270AY', 17.5, 'CLASS 3', 'Airbus', 'American Airlines'))
+    db.session.add(Aircraft('B738', 'Boeing 737-890(WL)', 'N524AS', 8.6, 'CLASS 3', 'Boeing', 'Alaska Airlines'))
+    db.session.add(Aircraft('B752', 'Boeing 757-236(SF)', 'G-BIKV', 31.0, 'CLASS 3', 'Boeing', 'DHL Air', False, 'Scrapped'))
     db.session.commit()
 
 
