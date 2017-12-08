@@ -15,7 +15,10 @@ class Destinations(Base):
 
     @property
     def serialize(self):
-        return {'airportName':self.airportName, 'id':self.id}
+        return {
+        'Airport Name':self.airportName, 'ID':self.id
+        }
+
 
 class Routes(Base):
     __tablename__ = 'routes'
@@ -26,3 +29,13 @@ class Routes(Base):
     price = Column(Float)
     origin_id = Column(Integer, ForeignKey('destinations.id'))
     origin = relationship(Destinations)
+
+    @property
+    def serialize(self):
+        return {
+        'Origin':self.origin, 'Destination':self.destination, 'ID':self.id
+        }
+
+
+engine = create_engine('sqlite:///routes.db')
+Base.metadata.create_all(engine)
