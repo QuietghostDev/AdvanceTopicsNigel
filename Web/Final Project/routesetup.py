@@ -1,0 +1,87 @@
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
+
+from models import Destinations, Base, Routes
+
+engine = create_engine('sqlite:///routes.db')
+
+Base.metadata.bind = engine
+
+DBSession = sessionmaker(bind=engine)
+
+session = DBSession()
+
+Philadelphia = destination(airportName="Philadelphia", id=1)
+session.add(Philadelphia)
+ito2 = flight(name="Philadelphia to New York", destination="New York", time=.75, price=5)
+session.add(ito2)
+ito6 = flight(name="Philadelphia to Chicago", destination="Chicago", time=1.5, price=5)
+session.add(ito6)
+
+NewYork = destination(airportName="New York", id=2)
+session.add(NewYork)
+bto1 = flight(name="New York to Philadelphia", destination="Philadelphia", time=.75, price=5)
+session.add(bto1)
+bto6 = flight(name="New York to Chicago", destination="New York", time=1.5, price=5)
+session.add(bto6)
+bto2 = flight(name="New York to New York", destination="New York", time=0, price=100000000)
+session.add(bto2)
+bto3 = flight(name="New York to Los Angeles", destination="Los Angeles", time=5.5, price=5)
+session.add(bto3)
+bto4 = flight(name="New York to San Fransisco", destination="San Fransisco", time=5.5, price=5)
+session.add(bto4)
+bto5 = flight(name="New York to Boston", destination="Boston", time=.9, price=5)
+session.add(bto5)
+bto7 = flight(name="New York to Dallas", destination="Dallas", time=2, price=5)
+session.add(bto7)
+
+LosAngeles = destination(airportName="Los Angeles", id=3)
+session.add(LosAngeles)
+cto2 = flight(name="Los Angeles to New York", destination="New York", time=5.5, price=5)
+session.add(cto2)
+cto6 = flight(name="Los Angeles to Chicago", destination="Chicago", time=4, price=5)
+session.add(cto6)
+cto4 = flight(name="Los Angeles to San Fransisco", destination="San Fransisco", time=.85, price=5)
+session.add(cto4)
+
+SanFrancisco = destination(airportName="San Francisco", id=4)
+session.add(SanFrancisco)
+dto2 = flight(name="San Fransisco to New York", destination="New York",  time=5.5, price=5)
+session.add(dto2)
+dto6 = flight(name="San Fransisco to Chicago", destination="Chicago", time=4, price=5)
+session.add(dto6)
+dto6 = flight(name="San Fransisco to Los Angeles", destination="Los Angeles", time=.85, price=5)
+session.add(dto6)
+dto7 = flight(name="San Fransisco to Dallas", destination="New York", time=1.5, price=5)
+session.add(dto7)
+
+Boston = destination(airportName="Boston", id=5)
+session.add(Boston)
+eto2 = flight(name="Boston to New York", destination="New York", time=.9, price=5)
+session.add(eto2)
+eto6 = flight(name="Boston to Chicago", destination="Chicago", time=2.6, price=5)
+session.add(eto6)
+
+Chicago = destination(airportName="Chicago", id=6)
+session.add(Chicago)
+fto2 = flight(name="Chicago to New York", destination="New York", time=1.5, price=5)
+session.add(fto2)
+fto1 = flight(name="Chicago to Philadelphia", destination="Philadelphia", time=1.5, price=5)
+session.add(fto1)
+fto3 = flight(name="Chicago to Los Angeles", destination="Los Angeles", time=4, price=5)
+session.add(fto3)
+fto4 = flight(name="Chicago to San Fransisco", destination="San Fransisco", time=4, price=5)
+session.add(fto4)
+fto5 = flight(name="Chicago to Boston", destination="Boston", time=2.6, price=5)
+session.add(fto5)
+fto7 = flight(name="Chicago to Dallas", destination="Dallas", time=2, price=5)
+session.add(fto7)
+
+Dallas = destination(airportName="Dallas", id=7)
+session.add(Dallas)
+gto2 = flight(name="Dallas to New York", destination="New York", time=5, price=5)
+session.add(gto2)
+gto6 = flight(name="Dallas to Chicago", destination="Chicago", time=2, price=5)
+session.add(gto6)
+gto4 = flight(name="Dallas to San Fransisco", destination="San Fransisco", time=3.5, price=5)
+session.add(gto4)

@@ -1,0 +1,14 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <h1>Molenaairlines&trade;</h1>
+    <p>Horrible conditions for great prices!</p>
+    <a href="flightSearch.html">Book your flight now!</a>
+    <h2>Cities Where We Operate:</h2>
+    {% for destination in destinations %}
+    <a href="{{url_for('showFlights', origin_id = destination.id)}}"></a>
+    {% endfor %}
+  </body>
+</html>

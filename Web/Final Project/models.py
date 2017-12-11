@@ -24,6 +24,7 @@ class Routes(Base):
     __tablename__ = 'routes'
 
     id = Column(Integer, primary_key=True)
+    name = Column(String(255))
     destination = Column(String(255))
     time = Column(Integer)
     price = Column(Float)

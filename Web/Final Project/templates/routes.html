@@ -1,0 +1,9 @@
+<html>
+<head></head>
+<body>
+  <h1>Our Destinations</h1>
+  {% for destination in destinations %}
+  <a href="{{url_for('showFlights', origin_id = destination.id)}}">
+  {% endfor %}
+</body>
+</html>
