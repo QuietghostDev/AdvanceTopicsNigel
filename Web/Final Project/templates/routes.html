@@ -1,9 +1,13 @@
 <html>
 <head></head>
 <body>
-  <h1>Our Destinations</h1>
-  {% for destination in destinations %}
-  <a href="{{url_for('showFlights', origin_id = destination.id)}}">
-  {% endfor %}
+  <h1>Our Destinations from {{city.airportName}}</h1>
+  <ul>
+    {% for route in destinations %}
+    <li>
+      <a href="{{url_for('showRoute', id = route.id)}}">{{route.destination}}</a>
+    </li>
+    {% endfor %}
+  </ul>
 </body>
 </html>

@@ -3,12 +3,12 @@
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-    <form action="#" method = 'POST'>
+    <form action='' method = 'GET' onsubmit="redirectSearch()">
       <p>Origin:</p>
       <input type ='text' size='30' name='origin' placeholder = 'Enter Airport Name'>
       <p>Destination:</p>
       <input type ='text' size='30' name='destination' placeholder = 'Enter Airport Name'>
-      <input type='submit' value='Edit'>
+      <input type='submit' value='Submit'>
       <a href ={{url_for('showAllDestinations')}}> Cancel </a>
     </form>
   </body>
