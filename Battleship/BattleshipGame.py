@@ -41,7 +41,7 @@ class BattleshipGame:
                     guess.hit(hitIndex)
                     return True
             else:
-                raise "guess_not_none"
+                raise Exception("guess_not_none")
         if receivingPlayer == 2:
             if self.board.shotLayerP2[y][x] is None:
                 guess = self.board.shipLayerP2[y][x]
@@ -54,4 +54,4 @@ class BattleshipGame:
                     guess.hit(hitIndex)
                     return True
             else:
-                raise "guess_not_none"
+                raise Exception("guess_not_none")
